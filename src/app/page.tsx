@@ -1,16 +1,28 @@
 "use client";
 
 import { useEffect, useState } from "react";
-
-import getAllPosts from "@/utils/Api";
+import { getAllPosts } from "@/utils/Api";
 import formatDate from "@/utils/FormatDate";
 
+type Post = {
+  id: number;
+  title: string;
+  author: { name: string };
+  content: string;
+  createdAt: string;
+  image: string;
+};
+
 export default function Home() {
-  const [posts, setPosts] = useState([]);
+  const [posts, setPosts] = useState<Post[]>([]);
 
   useEffect(() => {
-    getAllPosts().then((data) => {
+    getAllPosts()
+    .then((data: Post[]) => {
       setPosts(data);
+    })
+    .catch((error) => {
+      console.log(error);
     });
   }, []);
 
@@ -18,28 +30,27 @@ export default function Home() {
     <div>
       {posts.length >= 1 ? (
         <div>
-          {posts.map((e: any) => (
-            <div key={e.id}>
+          {posts.map((post) => (
+            <div key={post.id}>
               <div>
-                <h1>{e.title}</h1>
+                <h1>{post.title}</h1>
               </div>
               <div>
-                <h2>{e.author.name}</h2>
+                <h2>{post.author.name}</h2>
               </div>
               <div>
-                <p>{e.content}</p>
+                <p>{post.content}</p>
               </div>
               <div>
-                <span>{formatDate(e.createdAt)}</span>
+                <span>{formatDate(post.createdAt)}</span>
               </div>
               <div>
-                <img src={e.image} alt={`Imagem - ID: ${e.id}`} />
+                <img src={post.image} alt={`Imagem - ID: ${post.id}`} />
               </div>
             </div>
           ))}
         </div>
-      )
-      : (
+      ) : (
         <div>
           <div>
             <p>Carregando...</p>
