@@ -70,8 +70,14 @@ export default function View({ params: { id } }: PropsView) {
                     ) : (
                         <div>
                             {retorned ? <p>Post Não encontrado</p> : (
-                                loading ? <SquareLoader color="#F1A10A" loading={loading} size={150} /> : <p>Carregando Post...</p>
-                            )}
+                                loading ? 
+                                    <div className="loading">
+                                        <SquareLoader color="#F1A10A" loading={loading} size={150} />
+                                    </div>
+                                :
+                                    <p>Carregando Post...</p>
+                                )
+                            }
                         </div>
                     )}
                 </div>

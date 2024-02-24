@@ -1,0 +1,117 @@
+.modal-content {
+    min-width: 600px;
+    pointer-events: auto;
+    position: relative;
+    border: none;
+    display: flex;
+    background-color: #fff;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+.modal-content h2{
+    font-size: 30px;
+    text-align: center;
+}
+
+.modal-content.close{
+    align-items: center;
+    justify-content: flex-end;
+    padding: 20px;
+}
+
+.modal-content.close span{
+    cursor: pointer;
+    transform: scale(2);
+    color: #2D2D2D;
+    transition: all .3s ease-in-out;
+}
+
+.modal-content.close span:hover{
+    color: #F1A10A;
+    transform: scale(1.5);
+}
+
+
+.modal-content form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    min-width: 500px;
+    margin: 0 auto;
+    padding-bottom: 30px;
+}
+
+.modal-content form .form-content label{
+    display: block;
+    margin-bottom: 5px;
+}
+
+.modal-content form .form-content input, .modal-content form .form-content textarea{
+    width: 100%;
+    padding: 10px;
+    resize: none;
+    border-radius: 4px;
+    color: #2D2D2D;
+    border: 1px solid #2D2D2D;
+    outline: none;
+}
+
+.modal-content form .form-content textarea{
+    height: 150px;
+}
+
+.form-btn-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-btn-container .form-btn-content button{
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #2D2D2D;
+    color: #fff;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+
+.form-btn-container .form-btn-content button:hover{
+    background-color: #F1A10A;
+}
+
+.form-btn-container .form-btn-content button svg{
+    margin-right: 10px;
+}
+
+
+@media screen and (max-width: 600px) {    
+    .modal-content {
+        min-width: 100%;
+    }
+    
+
+    .modal-container{
+        width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+        gap: 20px;
+    }
+
+    .modal-content form{
+        min-width: 100%;
+    }
+
+    .modal-content form .form-content input, .modal-content form .form-content textarea{
+        width: 100%;
+    }
+}

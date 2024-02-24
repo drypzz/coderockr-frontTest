@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
+import "./style/contact.css";
 import "./style/blog.css";
 import "./style/header.css";
 import "./globals.css";
