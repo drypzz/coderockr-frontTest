@@ -31,31 +31,34 @@ const Blog: React.FC<BlogProps> = ({ posts }) => {
                     cardClass += isRight ? " right" : " left";
                     isRight = !isRight;
                     return (
-                        <Link href={`/view/${post.id}`} key={post.id}>
                             <div key={post.id} className={cardClass}>
-                                <div className="big-card--container">
-                                    <div>
-                                        <img src={post.image} alt={`Imagem - ID: ${post.id}`} />
+                                <Link href={`/view/${post.id}`} key={post.id}>
+                                    <div id={`${isRight}`}>
+                                        <div className="big-card--container">
+                                            <div className="big-card--content">
+                                                <img src={post.image} alt={`Imagem - ID: ${post.id}`} />
+                                            </div>
+                                            <div className="big-card--content">
+                                                <div className="big-card--content-container">
+                                                    <div>
+                                                        <h3 className="author">{post.author.name}</h3>
+                                                    </div>
+                                                    <div>
+                                                        <h2 className="title">{Textlimit({texto: post.title, limit: 25})}</h2>
+                                                    </div>
+                                                    <div>
+                                                        <p>{Textlimit({texto: post.content, limit: 45})}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div>
-                                        <h3 className="author">{post.author.name}</h3>
-                                    </div>
-                                    <div>
-                                        <h2 className="title">{Textlimit({texto: post.title, limit: 25})}</h2>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div>
-                                        <p>{Textlimit({texto: post.content, limit: 45})}</p>
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                        </Link>
+                            </Link>
+                        </div>
                     );
                 } else if (index % 3 === 0) {
                     return (
-                        <div key={`group-${index}`} className="small-card-group">
+                        <div key={`group-${index}`} className={`small-card-group ${isRight}`}>
                             <Link href={`/view/${post.id}`} key={post.id}>
                                 <div className="small-card--container">
                                     <div className="small-content">
