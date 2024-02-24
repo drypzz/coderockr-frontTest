@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  list-style: none;
+  text-decoration: none;
+  font-family: "Rubik", sans-serif;
+}
+
+body{
+  background: linear-gradient(90deg, #F1A10A 0%, #342303 100%);
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+.container{
+  width: 100%;
+  height: 100%;
+}
+
+.modal {
+  padding: 20px;
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 200;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  height: 100%;
+  background-color: #000000e1;
+  outline: 0;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.author{
+  font-size: 24px;
+  line-height: 34px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #2D2D2D;
+}
+
+.date{
+  font-size: 18px;
+  line-height: 26px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #032937;
+}
+
+.title{
+  font-size: 36px;
+  line-height: 43px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #F1A10A;
+}
+
+.loading{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100vh;
+}
