@@ -38,7 +38,7 @@ export default function View({ params: { id } }: PropsView) {
                 setLoading(false);
             });
         };
-    }, [id]);
+    }, [id, retorned]);
 
     return (
         <>
