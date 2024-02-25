@@ -4,7 +4,7 @@ header {
     z-index: 100;
 }
 
-nav a{
+nav a {
     color: #fff;
 }
 
@@ -84,7 +84,7 @@ nav {
         gap: 30px;
     }
 
-    .nav--open .nav--content ul li{
+    .nav--open .nav--content ul li {
         list-style: circle;
         margin-left: 30px;
     }

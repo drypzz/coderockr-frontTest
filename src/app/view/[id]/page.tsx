@@ -28,15 +28,15 @@ export default function View({ params: { id } }: PropsView) {
             setLoading(true);
         } else {
             getPostID(Number(id))
-            .then((data) => {
-                setPost(data);
-            })
-            .catch((error) => {
-                console.log(error);
-            })
-            .finally(() => {
-                setLoading(false);
-            });
+                .then((data) => {
+                    setPost(data);
+                })
+                .catch((error) => {
+                    console.log(error);
+                })
+                .finally(() => {
+                    setLoading(false);
+                });
         };
     }, [id, retorned]);
 
@@ -64,19 +64,19 @@ export default function View({ params: { id } }: PropsView) {
                                 </div>
                             </div>
                             <div className="content--post">
-                                <p>{post.content}</p>
+                                <p dangerouslySetInnerHTML={{ __html: post.content }}></p>
                             </div>
                         </div>
                     ) : (
                         <div>
                             {retorned ? <p>Post Não encontrado</p> : (
-                                loading ? 
+                                loading ?
                                     <div className="loading">
                                         <SquareLoader color="#F1A10A" loading={loading} size={150} />
                                     </div>
-                                :
+                                    :
                                     <p>Carregando Post...</p>
-                                )
+                            )
                             }
                         </div>
                     )}

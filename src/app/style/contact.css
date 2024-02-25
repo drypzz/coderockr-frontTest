@@ -9,7 +9,7 @@
     justify-content: center;
 }
 
-.modal-container{
+.modal-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -17,31 +17,31 @@
     gap: 50px;
 }
 
-.modal-content h2{
+.modal-content h2 {
     font-size: 30px;
     text-align: center;
 }
 
-.modal-content.close{
+.modal-content.close {
     align-items: center;
     justify-content: flex-end;
     padding: 20px;
 }
 
-.modal-content.close span{
+.modal-content.close span {
     cursor: pointer;
     transform: scale(2);
     color: #2D2D2D;
     transition: all .3s ease-in-out;
 }
 
-.modal-content.close span:hover{
+.modal-content.close span:hover {
     color: #F1A10A;
     transform: scale(1.5);
 }
 
 
-.modal-content form{
+.modal-content form {
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -50,12 +50,13 @@
     padding-bottom: 30px;
 }
 
-.modal-content form .form-content label{
+.modal-content form .form-content label {
     display: block;
     margin-bottom: 5px;
 }
 
-.modal-content form .form-content input, .modal-content form .form-content textarea{
+.modal-content form .form-content input,
+.modal-content form .form-content textarea {
     width: 100%;
     padding: 10px;
     resize: none;
@@ -65,17 +66,17 @@
     outline: none;
 }
 
-.modal-content form .form-content textarea{
+.modal-content form .form-content textarea {
     height: 150px;
 }
 
-.form-btn-container{
+.form-btn-container {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.form-btn-container .form-btn-content button{
+.form-btn-container .form-btn-content button {
     padding: 10px 20px;
     border: none;
     border-radius: 4px;
@@ -85,33 +86,34 @@
     transition: all .3s ease-in-out;
 }
 
-.form-btn-container .form-btn-content button:hover{
+.form-btn-container .form-btn-content button:hover {
     background-color: #F1A10A;
 }
 
-.form-btn-container .form-btn-content button svg{
+.form-btn-container .form-btn-content button svg {
     margin-right: 10px;
 }
 
 
-@media screen and (max-width: 600px) {    
+@media screen and (max-width: 600px) {
     .modal-content {
         min-width: 100%;
     }
-    
 
-    .modal-container{
+
+    .modal-container {
         width: 100%;
         padding-left: 20px;
         padding-right: 20px;
         gap: 20px;
     }
 
-    .modal-content form{
+    .modal-content form {
         min-width: 100%;
     }
 
-    .modal-content form .form-content input, .modal-content form .form-content textarea{
+    .modal-content form .form-content input,
+    .modal-content form .form-content textarea {
         width: 100%;
     }
 }
