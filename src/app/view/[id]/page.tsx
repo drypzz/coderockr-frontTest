@@ -69,14 +69,20 @@ export default function View({ params: { id } }: PropsView) {
                         </div>
                     ) : (
                         <div>
-                            {retorned ? <p>Post Não encontrado</p> : (
+                            {retorned ? 
+                                <div className="mains-infos">
+                                    <p className="error">* Post Not found!</p>
+                                </div>
+                            : (
                                 loading ?
                                     <div className="loading">
                                         <SquareLoader color="#F1A10A" loading={loading} size={150} />
                                     </div>
                                     :
-                                    <p>Carregando Post...</p>
-                            )
+                                    <div className="mains-infos">
+                                        <p className="info">* Loading Post...</p>
+                                    </div>
+                                )
                             }
                         </div>
                     )}

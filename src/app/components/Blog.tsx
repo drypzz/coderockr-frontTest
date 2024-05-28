@@ -12,13 +12,12 @@ interface BlogProps {
 const Blog: React.FC<BlogProps> = ({ posts }) => {
     let isRight = true;
 
-    const Textlimit = ({ texto, limit }: { texto: string, limit: number }) => {
-        const caracteresPorLinha = limit;
-        const limite = 3 * caracteresPorLinha;
-        if (texto.length > limite) {
-            return texto.substring(0, limite).trim() + "...";
+    const Textlimit = ({ text, limit }: { text: string, limit: number }) => {
+        const results = 3 * limit;
+        if (text.length > results) {
+            return text.substring(0, results).trim() + "...";
         }
-        return texto;
+        return text;
     };
 
     return (
@@ -44,10 +43,10 @@ const Blog: React.FC<BlogProps> = ({ posts }) => {
                                                             <h3 className="author">{post.author.name}</h3>
                                                         </div>
                                                         <div>
-                                                            <h2 className="title">{Textlimit({ texto: post.title, limit: 25 })}</h2>
+                                                            <h2 className="title">{Textlimit({ text: post.title, limit: 25 })}</h2>
                                                         </div>
                                                         <div>
-                                                            <p>{Textlimit({ texto: post.content, limit: 45 })}</p>
+                                                            <p>{Textlimit({ text: post.content, limit: 45 })}</p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -69,10 +68,10 @@ const Blog: React.FC<BlogProps> = ({ posts }) => {
                                                     <h3 className="author">{post.author.name}</h3>
                                                 </div>
                                                 <div>
-                                                    <h2 className="title">{Textlimit({ texto: post.title, limit: 25 })}</h2>
+                                                    <h2 className="title">{Textlimit({ text: post.title, limit: 25 })}</h2>
                                                 </div>
                                                 <div>
-                                                    <p>{Textlimit({ texto: post.content, limit: 45 })}</p>
+                                                    <p>{Textlimit({ text: post.content, limit: 45 })}</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -89,10 +88,10 @@ const Blog: React.FC<BlogProps> = ({ posts }) => {
                                                             <h3 className="author">{posts[index + 1].author.name}</h3>
                                                         </div>
                                                         <div>
-                                                            <h2 className="title">{Textlimit({ texto: posts[index + 1].title, limit: 25 })}</h2>
+                                                            <h2 className="title">{Textlimit({ text: posts[index + 1].title, limit: 25 })}</h2>
                                                         </div>
                                                         <div>
-                                                            <p>{Textlimit({ texto: posts[index + 1].content, limit: 45 })}</p>
+                                                            <p>{Textlimit({ text: posts[index + 1].content, limit: 45 })}</p>
                                                         </div>
                                                     </div>
                                                 </div>
